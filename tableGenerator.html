@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<style type="text/css">
+		.f{
+			margin-top: 100px;
+		}
+		td{
+			padding: 5px 8px;
+		}
+	</style>
+
+		<script type="text/javascript">
+			function createTable(){
+				var r=parseInt(document.getElementById("rows").value);
+				var c=parseInt(document.getElementById("Cols").value);
+				var table=document.getElementById("table");
+				table.innerHTML="";
+				var row;
+				var col;
+				for (var i = 0; i < r; i++) {
+					row=table.insertRow(i);
+					for (var j = 0; j < c; j++) {
+						col=row.insertCell(j);
+						col.innerHTML="Row-"+i+" Column-"+j;
+					}
+				}
+			}
+			
+		</script>
+</head>
+<body>
+	<div class="container">
+		<div class="row f">
+			<div class="col-sm-5">
+				<input type="number" class="form-control" id="rows" >
+			</div>
+			<div class="col-sm-5">
+				<input type="number" class="form-control" id="Cols" >
+			</div>
+			<div class="col-sm-2">
+				  <button type="submit" class="btn btn-primary" onclick="createTable()">Create</button>
+			</div>
+		</div>
+		<div class="row f text-center">
+			<div class="col-sm-12">
+				<table id="table" border="1"></table>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
